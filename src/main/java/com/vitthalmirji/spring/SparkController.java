@@ -16,7 +16,7 @@ public class SparkController {
 
     @RequestMapping("read-csv")
     public ResponseEntity<String> getRowCount() {
-        Dataset<Row> dataset = sparkSession.read().option("header", "true").csv("../spark-spring/src/main/resources/raw_data.csv");
+        Dataset<Row> dataset = sparkSession.read().option("header", "true").csv("../spark-spring-boot/src/main/resources/raw_data.csv");
         String html = String.format("<h1>%s</h1>", "Running Apache Spark on/with support of Spring boot") +
                 String.format("<h2>%s</h2>", "Spark version = "+sparkSession.sparkContext().version()) +
                 String.format("<h3>%s</h3>", "Read csv..") +
